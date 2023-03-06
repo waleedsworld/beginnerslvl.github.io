@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from colorlib.com/etc/bwiz/colorlib-wizard-9/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Mar 2023 11:16:46 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Bot</title>
+<!-- <link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/home.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+
+    
+<link rel="stylesheet" href="css/style.css">
+<meta name="robots" content="noindex, follow">
+<script nonce="dc5e6396-34fe-4fa5-8af8-960626fddccb">(function(w,d){!function(bv,bw,bx,by){bv[bx]=bv[bx]||{};bv[bx].executed=[];bv.zaraz={deferred:[],listeners:[]};bv.zaraz.q=[];bv.zaraz._f=function(bz){return function(){var bA=Array.prototype.slice.call(arguments);bv.zaraz.q.push({m:bz,a:bA})}};for(const bB of["track","set","debug"])bv.zaraz[bB]=bv.zaraz._f(bB);bv.zaraz.init=()=>{var bC=bw.getElementsByTagName(by)[0],bD=bw.createElement(by),bE=bw.getElementsByTagName("title")[0];bE&&(bv[bx].t=bw.getElementsByTagName("title")[0].text);bv[bx].x=Math.random();bv[bx].w=bv.screen.width;bv[bx].h=bv.screen.height;bv[bx].j=bv.innerHeight;bv[bx].e=bv.innerWidth;bv[bx].l=bv.location.href;bv[bx].r=bw.referrer;bv[bx].k=bv.screen.colorDepth;bv[bx].n=bw.characterSet;bv[bx].o=(new Date).getTimezoneOffset();if(bv.dataLayer)for(const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ,bK)=>({...bJ[1],...bK[1]})))))zaraz.set(bI[0],bI[1],{scope:"page"});bv[bx].q=[];for(;bv.zaraz.q.length;){const bL=bv.zaraz.q.shift();bv[bx].q.push(bL)}bD.defer=!0;for(const bM of[localStorage,sessionStorage])Object.keys(bM||{}).filter((bO=>bO.startsWith("_zaraz_"))).forEach((bN=>{try{bv[bx]["z_"+bN.slice(7)]=JSON.parse(bM.getItem(bN))}catch{bv[bx]["z_"+bN.slice(7)]=bM.getItem(bN)}}));bD.referrerPolicy="origin";bD.src="../../../cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(bv[bx])));bC.parentNode.insertBefore(bD,bC)};["complete","interactive"].includes(bw.readyState)?zaraz.init():bv.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+
+
+<body>
+
+  <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Use the Chatbot!
+            <i id="chat-icon" style="color: #ffffff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+<div class="wrapper">
+<form action="#" id="wizard">
+
+<h4></h4>
+
+<div class="alert alert-danger" role="alert">
+  This is  The beta version. Please refer to <a href="/School Stuff/edulab/Contact/index.html">contact me</a> if you have been hacked.
+</div>
+
+
+<h4></h4>
+
+<section>
+<form action="https://formspree.io/f/mlekbykb" method="POST">
+  <h3>Tell us about yourself</h3>
+  <div class="form-row">
+    <div class="form-col">
+      <label for="full-name">Full Name:</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-account-o"></i>
+        <input type="text" class="form-control" id="full-name" name="full-name" required>
+      </div>
+    </div>
+    <div class="form-col">
+      <label for="class-section">Class/Section:</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-edit"></i>
+        <input type="text" class="form-control" id="class-section" name="class-section" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-col">
+      <label for="email">Email ID:</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-email"></i>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+    </div>
+    <div class="form-col">
+      <label for="lms-username">Lms username:</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-smartphone-android"></i>
+        <input type="text" class="form-control" id="lms-username" name="lms-username" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-col">
+      <label for="platform">Which platform?</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-spellcheck"></i>
+        <input type="text" class="form-control" id="platform" name="platform" required>
+      </div>
+    </div>
+    <div class="form-col">
+      <label for="hacked-date">When were you hacked:</label>
+      <div class="form-holder">
+        <i class="zmdi zmdi-calendar"></i>
+        <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd - mm - yyyy" id="hacked-date" name="hacked-date" required>
+      </div>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+</section>
+
+<h4></h4>
+
+
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="scripts/responses.js"></script>
+<script src="scripts/chat.js"></script>
+<script src="js/jquery.steps.js"></script>
+
+<script src="vendor/date-picker/js/datepicker.js"></script>
+<script src="vendor/date-picker/js/datepicker.en.js"></script>
+<script src="js/main.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon='{"rayId":"7ac6439e8ecb0048","version":"2023.3.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
+</body>
+
