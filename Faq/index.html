@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+</head>
+<body>
+<main>
+  <div class="main">
+    <div class="image">
+    </div>
+    <div class="faqs">
+      <h1>FAQ</h1>
+      <div class="faq-items">
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-1"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          When installing certain applications, we may need to turn off the firewall despite its importance. How can this be done effectively without compromising the security of the system?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            Firewalls are critical security measures that protect computers from unauthorized access and malware infections. However, some applications require that the firewall be turned off temporarily to allow for their installation. This can be done effectively without compromising system security by following some best practices. First, make sure to only turn off the firewall when necessary and for the shortest time possible. This minimizes the window of vulnerability during which the system is exposed to potential attacks. Second, only turn off the firewall for trusted applications from reputable sources. It's crucial to verify the authenticity of the application before installing it to avoid downloading malware. Finally, ensure that the firewall is turned on immediately after the installation is complete.
+          </p>
+        </div>
+        <div class="faq-item active">
+          <button
+                  id="faq-item-question-2"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          What is the appropriate action to take when a friend asks for your password, and what are the risks associated with sharing passwords?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            Sharing passwords with friends is a common practice that poses significant risks to both parties. It's essential to never share passwords with friends, even if they promise to keep them confidential. Instead, educate them on the importance of password security and encourage them to create unique, strong passwords for their accounts. Sharing passwords can lead to various security threats, such as identity theft, unauthorized access to personal data, and malware infections. Moreover, sharing passwords violates the terms of service of many websites and services, leading to account suspension or termination. If a friend asks for your password, it's important to politely decline and explain the risks associated with password sharing.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-3"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          If a hacker is threatening you to send them money, what steps can you take to deal with the situation, and how can you protect yourself from such attacks?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            If someone is threatening you to send them money, it is important not to give in to their demands. Instead, report the incident to the authorities and gather as much evidence as possible. You can also block the person's phone number and email address to prevent further contact. To protect yourself from such attacks, make sure to use strong passwords, enable two-factor authentication, and avoid clicking on suspicious links or downloading unknown attachments.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-4"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          How do antivirus programs work, and what are some common features that they provide for protecting computer systems from malware?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            Antivirus programs work by scanning files and programs on a computer system for known malware signatures or suspicious behavior. They can also provide features such as real-time protection, automatic updates, and scheduled scans to ensure maximum protection against malware. Some common features of antivirus programs include quarantine and removal of infected files, blocking of malicious websites, and protection against phishing attacks.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-5"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          How can we determine whether an application or website is secure, and what are some reliable methods for verifying their authenticity?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            To determine whether an application or website is secure, you can look for indicators such as a secure connection (https), a lock icon, and a valid SSL certificate. You can also check the reputation of the website or application by reading reviews or using online tools such as Google's Safe Browsing feature. It is important to only download applications or visit websites from trusted sources and to avoid clicking on suspicious links or downloading unknown attachments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="next-button">
+    <a href="2.html">
+      <button>Next</button>
+    </a>
+  </div>
+  
+</main>
+<script src="./app.js"></script>
+</body>
+</html>

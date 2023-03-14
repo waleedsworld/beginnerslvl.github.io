@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+</head>
+<body>
+<main>
+  <div class="main">
+    <div class="image">
+    </div>
+    <div class="faqs">
+      <h1>FAQ</h1>
+      <div class="faq-items">
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-1"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >What are the essential steps to follow when using an antivirus program to ensure maximum protection against malware and other cyber threats?
+          
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            To ensure maximum protection against malware and other cyber threats, it is important to follow certain steps when using an antivirus program. These steps include keeping the antivirus program updated, running regular scans, avoiding downloading unknown files or visiting suspicious websites, and enabling real-time protection. It is also important to avoid disabling the antivirus program or ignoring warning messages.
+          </p>
+        </div>
+        <div class="faq-item active">
+          <button
+                  id="faq-item-question-2"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          How can we choose the best security device, such as a VPN or firewall, to protect our computer systems, and what factors should be considered before making a decision?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            
+            When choosing a security device such as a VPN or firewall, it is important to consider factors such as the level of security provided, the ease of use, and the cost. It is also important to choose a reputable provider and to read reviews and research the device before making a decision. Other factors to consider may include the device's compatibility with your computer system and the level of technical support provided.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-3"
+                  class="question"
+                  onclick="showAnswer(event)"
+          > If our account has been hacked, what measures should we take to recover it, and how can we prevent similar incidents from happening in the future?
+            <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            If your account has been hacked, it is important to immediately change your password, enable two-factor authentication, and notify the service provider. You can also scan your computer system for malware and review your account activity for any unauthorized access. To prevent similar incidents from happening in the future, it is important to use strong passwords, avoid clicking on suspicious links or downloading unknown attachments, and regularly update your software and security settings.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-4"
+                  class="question"
+                  onclick="showAnswer(event)"
+          > How does two-factor authentication (2FA) work, and what are its benefits in enhancing the security of online accounts and systems?
+          <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            Two-factor authentication (2FA) works by requiring two forms of identification, such as a password and a verification code sent to your phone, to access an online account. This provides an extra layer of security and helps prevent unauthorized access to your account. The benefits of 2FA include increased security, protection against phishing attacks, and peace of mind knowing that your online accounts are better protected.
+          </p>
+        </div>
+        <div class="faq-item">
+          <button
+                  id="faq-item-question-5"
+                  class="question"
+                  onclick="showAnswer(event)"
+          >
+          If a hacker is persistently calling or emailing us, threatening to steal our personal information or access our email account, what steps can we take to avoid falling victim to their schemes?
+           <img
+                    src="images/icon-arrow-down.svg"
+                    alt="down arrow"
+                    class="arrow"
+            />
+          </button>
+          <p class="answer">
+            If a hacker is persistently calling or emailing you and threatening to steal your personal information or access your email account, it is important to not engage with them and to report the incident to the authorities. You can also block their phone number and email address and review your security settings to ensure maximum protection against cyber threats.
+                    </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="next-button">
+    <a href="#">
+      <button>Next</button>
+    </a>
+  </div>
+  
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
