@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waleedsworld.github.io/beginnerslvl.github.io/sitemap.xml
