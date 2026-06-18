@@ -3543,3 +3543,82 @@ RESPONSIVE STYLESHEET
 .what-other-say .owl-nav button.owl-next:hover {
 	background: #12a84e;
 }
+
+/* ============================================================
+   Course search box (course-listing page)
+   Styles the live keyword search field added above the
+   category filter buttons.
+   ============================================================ */
+.course-listing-page .course-search-wrap {
+	position: relative;
+	max-width: 420px;
+	margin: 0 auto 2.5em;
+}
+
+.course-listing-page .course-search-wrap i {
+	position: absolute;
+	top: 50%;
+	left: 18px;
+	transform: translateY(-50%);
+	color: #1c3961;
+	pointer-events: none;
+}
+
+.course-listing-page .course-search-wrap input {
+	width: 100%;
+	padding: 0.9em 1em 0.9em 3em;
+	border: 1px solid #d4d4d4;
+	border-radius: 30px;
+	font-size: 1rem;
+	outline: none;
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-listing-page .course-search-wrap input:focus {
+	border-color: #1c3961;
+	box-shadow: 0 0 0 3px rgba(28, 57, 97, 0.12);
+}
+
+/* active state for the category filter buttons */
+.course-listing-page .button-group button.is-active::after {
+	content: "";
+	position: absolute;
+	border: 1px solid #1c3961;
+	bottom: 0;
+	width: 80%;
+	left: 10%;
+	z-index: 999;
+}
+
+/* ============================================================
+   Scroll-to-top button (injected on every page via custom.js)
+   ============================================================ */
+#scroll-to-top {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	width: 46px;
+	height: 46px;
+	border: none;
+	border-radius: 50%;
+	background: #1c3961;
+	color: #fff;
+	font-size: 1.05rem;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	z-index: 9999;
+}
+
+#scroll-to-top.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+#scroll-to-top:hover {
+	background: #12a84e;
+}

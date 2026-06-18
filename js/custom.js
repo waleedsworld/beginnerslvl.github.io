@@ -188,10 +188,58 @@ var $grid = $('#cGrid').isotope({
   itemSelector: '.grid-item',
   layoutMode: 'fitRows'
 });
+
+// Combined category + keyword filtering. The category buttons and the live
+// search box each set their own value, then applyCourseFilters() re-runs the
+// Isotope filter so both conditions apply at the same time.
+var courseCategory = '*';   // active category selector, "*" = all
+var courseSearch = '';      // lowercased search term
+
+function applyCourseFilters() {
+  $grid.isotope({
+    filter: function () {
+      var $item = $(this);
+      var matchesCategory = courseCategory === '*' || $item.is(courseCategory);
+      var matchesSearch = courseSearch === '' ||
+        $item.text().toLowerCase().indexOf(courseSearch) !== -1;
+      return matchesCategory && matchesSearch;
+    }
+  });
+}
+
 // filter items on button click
 $('#filters').on( 'click', 'button', function() {
-  var filterValue = $(this).attr('data-filter');
-  // use filterFn if matches value
-  $grid.isotope({ filter: filterValue });
+  courseCategory = $(this).attr('data-filter');
+  $('#filters button').removeClass('is-active');
+  $(this).addClass('is-active');
+  applyCourseFilters();
+});
+
+// live keyword search over the course cards
+$('#course-search').on('keyup', function () {
+  courseSearch = $.trim($(this).val()).toLowerCase();
+  applyCourseFilters();
+});
+
+
+// Scroll-to-top button: injected on every page, fades in once the visitor has
+// scrolled down and smoothly returns them to the top of the page on click.
+var $scrollTop = $('<button>', {
+  'id': 'scroll-to-top',
+  'aria-label': 'Back to top',
+  'html': '<i class="fas fa-arrow-up"></i>'
+}).appendTo('body');
+
+$(window).on('scroll', function () {
+  if ($(this).scrollTop() > 400) {
+    $scrollTop.addClass('is-visible');
+  } else {
+    $scrollTop.removeClass('is-visible');
+  }
+});
+
+$scrollTop.on('click', function () {
+  $('html, body').animate({ scrollTop: 0 }, 500);
+  return false;
 });
 

@@ -128,8 +128,14 @@
 		<!-- Banner Close -->
 		<section class="course-listing-page">
 			<div class="container">
+				<!-- Live keyword search: filters the course grid as you type and
+				     works together with the category buttons below -->
+				<div class="course-search-wrap">
+					<i class="fas fa-search"></i>
+					<input type="text" id="course-search" placeholder="Search courses..." aria-label="Search courses">
+				</div>
 				<div id="filters" class="button-group">
-					<button class="button" data-filter="*">all</button>
+					<button class="button is-active" data-filter="*">all</button>
   					<button class="button" data-filter=".business">business</button>
   					<button class="button" data-filter=".design">design</button>
   					<button class="button" data-filter=".development">development</button>
