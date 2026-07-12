@@ -1,478 +1,109 @@
-=== EDULAB ===
+# 🔐 SafeSurf Web — *LGSJT 254F-1*
 
+> **Think before you click.** A friendly, no-jargon cybersecurity awareness website that helps everyday people (and especially students) stay safe online — from phishing and password hygiene to "what do I do if I've *actually* been hacked?"
 
-=== Changelog ===
+Built by **Waleed Ajmal** as a school tech project, SafeSurf is a small multi-page static site with a big mission: make staying safe on the internet feel approachable instead of scary. No fear-mongering, no walls of tech-speak — just clear advice, a student Q&A forum, and a few resources to help you surf without wiping out. 🏄
 
-index page done
+![SafeSurf home page](docs/media/home-desktop.png)
 
-blog page done
+---
 
-blog-edu-single done
+## ✨ What's inside
 
-events done
+- **Learn to protect yourself** — a hero-led landing page with the golden rule front and center: *think before you click*.
+- **Popular Questions** — real questions from students (turning off your firewall, sharing passwords, dealing with threats) answered in plain English.
+- **Student Security Forums** — a space to swap stories and support each other after a hacking scare.
+- **"I've been hacked" help** — a calm, step-by-step corner for when things go wrong.
+- **Resources & News** — curated links to keep learning, plus a downloadable security primer (PDF).
+- **Contact** — a simple form to reach out (drop us a line, no strings attached).
 
-contact page done
+## 📸 A peek around the site
 
-about page done
+| About | Courses / Resources | On your phone |
+|:-----:|:-------------------:|:-------------:|
+| ![About](docs/media/about-desktop.png) | ![Courses](docs/media/courses-desktop.png) | ![Mobile](docs/media/home-mobile.png) |
 
-course single page done
+Fully responsive — it folds down neatly to a tidy hamburger menu on mobile so it looks sharp whether you're on a laptop or a lock screen away on your phone.
 
-testimonial page done
+---
 
-course Listing page done
+## 🚀 Run it locally (beginner-friendly, promise)
 
-gallery 2 page done 
+This is a **plain static website** — no build step, no npm gymnastics, no framework to wrestle. If you can open a terminal, you can run this.
 
-video and image slider added
+### You'll need
+- Any modern web browser (Chrome, Firefox, Safari, Edge — dealer's choice 🎴)
+- **Python 3** *(almost certainly already on your machine — check with `python3 --version`)*, OR any other tiny static file server
 
-Image Hover and lightbox added
+### Step 1 — Grab the code
+```bash
+git clone https://github.com/waleedsworld/beginnerslvl.github.io.git
+cd beginnerslvl.github.io
+```
 
-font-size and font family grouping
+### Step 2 — Serve it
+Because the pages link to each other with relative paths, don't just double-click `index.html` — spin up a little local server instead:
 
+```bash
+python3 -m http.server 8242
+```
 
-/*================================
-	Font Size
-==================================*/
+### Step 3 — Surf on over 🌊
+Open your browser to:
 
-/*font size of 14px*/
+```
+http://localhost:8242/index.html
+```
 
-.course-listing-page .button-group button,
-.gallery-section .button-group button,
-.gallery-section2 .button-group button,
-.learn-courses .box-body p, 
-.course-listing-page .grid-item .box-body p,
-.recent-course-single .grid-item .box-body p,
-.details p,
-.details h5,
-.news-detail h2,
-.news-detail p,
-.footer-first-section .box-wrap p,
-.footer-first-section .box-wrap h4,
-.footer-first-section .box-wrap ul li a,
-.footer-first-section .recent-course-wrap .course-name p,
-.footer-first-section .quick-contact input,
-.footer-first-section .quick-contact textarea,
-.footer-first-section .quick-contact button, 
-.grid-box-wrap .grid-body h4,
-.page-content .post-content p,
-.page-content .courses-wrap span,
-.page-content .page-article a,
-.team-members .developer-wrap p,
-.course-detail .course-box p,
-#course-page aside .reserve-course input[type="text"],
-aside .reserve-course input[type="email"],
-.testimonial-page aside .submit-testimonials input[type="text"],
-.testimonial-page aside .submit-testimonials input[type="email"],
-#course-page aside .reserve-course textarea,
-.testimonial-page aside .submit-testimonials textarea,
-.testimonial-page .submit-testimonials form .custom-file-upload,
-.row .rewiew-content p,
-.top-header .container,
-.testimonial-holder,
-.post-content span a svg,
-.developer-wrap li a svg,
-.submit-testimonials form span p,
-figcaption h4
-{
-	font-size: 1.4rem;
-}
+That's it. You're in. Poke around the pages, the menus, and the forums.
 
-/*Font size of 15px*/
+> 🐍 **No Python?** Any static server works. With Node installed you can run `npx serve` instead, or use the "Live Server" extension in VS Code. Same idea: serve the folder, open the port.
 
-.row .rewiew-content footer h4,
-.row .rewiew-content footer h4::before,
-.row .rewiew-content footer h4::after{
-	font-size: 1.5rem;
-}
+---
 
-/*Font size of 16px*/
+## 🗂️ Project structure
 
-.whyus-wrap p,
-.footer-first-section .recent-course-wrap .course-name h3,
-.footer-last-section .container p,
-.grid-box-wrap .grid-body p,
-.grid-box-wrap .grid-body a,
-.page-content .container aside .news-letter p,
-.page-content .container aside .news-letter input[type="email"],
-.page-content .container aside .news-letter a,
-.page-content .post-content h3,
-.contact-page-section .people-info-wrap p,
-.contact-page-section .people-info-wrap form .input-,
-.people-info-wrap form input[type="submit"],
-.about-upper-section .who-we-are p,
-.about-upper-section .our-story a,
-.course-detail .course-box h3,
-.course-detail .course-box button,
-.course-detail p,
-.course-objective li,
-.contact-list li span
-{
-	font-size: 1.6rem;
-}
+```
+.
+├── index.html            # Home — the main landing page
+├── about.html            # About the project & mission
+├── blog.html             # Blog listing
+├── blog-edu-single.html  # A single blog post
+├── course-listing.html   # Resources / courses grid
+├── course-single.html    # A single resource page
+├── events.html           # Events
+├── gallery2.html         # Image gallery + lightbox
+├── testimonials.html     # What people are saying
+├── contact.html          # Contact page
+├── Contact/              # Standalone contact form (+ optional PHP mailer)
+├── css/  · style.css     # Styles (site + inner pages)
+├── js/                   # jQuery, sliders, lightbox, menu logic
+├── images/               # Banners, logos, icons, security.pdf primer
+├── webfonts/             # Icon fonts
+└── docs/media/           # Screenshots used in this README
+```
 
-/*font size of 18px*/
+## 🛠️ Built with
 
-.nav-menu a,
-.learn-courses .learn-desining-banner,
-.course-listing-page .grid-item .learn-desining-banner-course,
-.recent-course-single .grid-item .learn-desining-banner-course,
-.featured-points li,
-.read-more-btn,
-.details h3,
-.news-detail h1,
-.footer-first-section .box-wrap header h1,
-.page-content .courses-wrap p,
-.page-content .page-article p,
-.page-content .share-section span,
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form textarea,
-.comment-form p,
-.button-section .button, .customer-review .button,
-.team-members .developer-wrap h3,
-#course-page aside .reserve-course input[type="submit"],
-.testimonial-page aside .submit-testimonials input[type="submit"],
-.row .rewiew-content header h3,
-.row .rewiew-content header p,
-.footer-second-section .social-list li a svg,
-.contact-list li svg,
-figcaption h3 
-{
-	font-size: 1.8rem;
-}
+Good old dependable web tech — the kind that just works:
 
-/*font size of 20px*/
+- **HTML5 & CSS3** — hand-tuned styles across the site and inner pages
+- **JavaScript / jQuery** — sliders (Owl Carousel, FlexSlider), Lightbox galleries, and the responsive MeanMenu
+- **Font Awesome & icon fonts** — for the little visual touches
+- **PHP** *(optional)* — `Contact/send-mail.php` for the contact form if you host somewhere that runs PHP. GitHub Pages serves the static site just fine without it.
 
-.banner .container h3,
-.grid-box-wrap .grid-body h1,
-.page-content .container aside .recent-post h2,
-.navigation.pagination .page-numbers,
-.contact-page-section .contact-social li a,
-#course-page .reserve-course h2,
-.testimonial-page aside .submit-testimonials h2
-{
-	font-size: 2rem;
-}
+## 📬 Contact form note
 
+The contact form ships with an optional PHP mailer (`Contact/send-mail.php`). It only does anything on a PHP-capable host — on a static host (like GitHub Pages) the rest of the site works perfectly and the form simply won't send. Swap in a form service (Formspree, Netlify Forms, etc.) if you want it live without a server.
 
-/*Font size of 24px*/
-.query-section .container p,
-.page-content .container aside .news-letter h2,
-.page-content .follow-us h2,
-.page-content .follow-us a,
-.page-content .share-section span a,
-.page-content .categories-block h2,
-.comments-title,
-.comment-form h2,
-.course-detail h3
-{
-	font-size: 2.4rem;
-}
+## 🌍 Live demo
 
-/*font size of 25px*/
+**Deploying soon** — a hosted version is on the way. Until then, the local setup above gets you the full experience in under a minute.
 
-.featured-points ul svg,
-.about-upper-section .our-story svg
-{
-	font-size: 2.5rem;
-}
+## 🙏 Credits
 
+Content, structure, and the SafeSurf concept by **Waleed Ajmal**. The visual foundation started from a free open education HTML theme and was reshaped into this cybersecurity-awareness site.
 
-/*Font Size Of 30px*/
+---
 
-.page-heading .container h2,
-.whyus-wrap h1,
-.wrap-others-say h1,
-.contact-page-section .people-info-wrap h2,
-.contact-page-section .contact-info h2,
-.top-heading,
-#course-page .course-detail h2,
-.recent-course-single h2
-{
-	font-size: 3rem;
-}
-
-/*Font Size of 40px*/
-
-.banner .container h1,
-.banner .owl-nav .owl-prev, 
-.banner .owl-nav .owl-next,
-.page-content .page-article h1
-{
-	font-size: 4rem;
-}
-
-/*================================
-	Font Family
-==================================*/
-
-.top-header a,
-.nav-menu a,
-.banner .container,
-.page-heading .container h2,
-.course-listing-page .button-group button,
-.gallery-section .button-group button,
-.gallery-section2 .button-group button,
-.learn-courses .learn-desining-banner,
-.course-listing-page .grid-item .learn-desining-banner-course,
-.recent-course-single .grid-item .learn-desining-banner-course,
-.learn-courses .box-body p, 
-.course-listing-page .grid-item .box-body p,
-.recent-course-single .grid-item .box-body p,
-.learn-courses .box-body section p,
-.featured-points li,
-.whyus-wrap h1,
-.whyus-wrap p,
-.read-more-btn,
-.details h3,
-.details p,
-.wrap-others-say h1,
-.news-detail h1,
-.news-detail h2,
-.news-detail p,
-.query-section .container p,
-.footer-first-section .box-wrap header h1,
-.footer-first-section .box-wrap p,
-.footer-first-section .box-wrap h4 a,
-.footer-first-section .box-wrap ul li a,
-.footer-first-section .recent-course-wrap,
-.footer-last-section .container p,
-.grid-box-wrap .grid-body h4,
-.grid-box-wrap .grid-body h1,
-.grid-box-wrap .grid-body p,
-.grid-box-wrap .grid-body a,
-.page-content .container aside, 
-.testimonial-page .container aside,
-.navigation.pagination .page-numbers,
-.page-content .page-article,
-.comment-section,
-.comment-form,
-.button-section .button, 
-.customer-review .button,
-.contact-page-section,
-.about-upper-section,
-.team-members .container,
-#course-page,
-.course-detail .course-box button,
-#course-page aside .reserve-course input, 
-#course-page aside .reserve-course textarea,
-.testimonial-page aside .submit-testimonials input,
-.testimonial-page aside .submit-testimonials textarea,
-.recent-course-single h2,
-.testimonial-page .container,
-.customer-review .row .rewiew-content
-{
-	font-family: 'Raleway', sans-serif;
-}
-
-/*================================
-	Color
-==================================*/
-
-/*====Black Text Color==========*/
-
-.page-heading .container h2,
-.course-listing-page .button-group button,
-.gallery-section .button-group button,
-.gallery-section2 .button-group button,
-.query-section .container p,
-.footer-first-section .quick-contact button,
-.grid-box-wrap .grid-body h1,
-.page-content .container aside .recent-post h2,
-.page-content .follow-us,
-.page-content .follow-us a,
-.page-content .page-article h1,
-.page-content .share-section span,
-.page-content .share-section span a,
-.page-content .categories-block h2,
-.comments-title,
-.comment-form h2,
-.contact-page-section .people-info-wrap h2,
-.contact-page-section .contact-info h2,
-.contact-page-section .contact-list li svg,
-.contact-page-section .contact-social li a,
-.top-heading,
-.team-members .developer-wrap h3,
-.team-members .developer-wrap ul svg,
-#course-page .course-detail h2,
-.course-detail h3,
-.recent-course-single h2,
-.row .rewiew-content header h3,
-.row .rewiew-content footer h4,
-figcaption h4   
-{
-	color: #000;
-}
-
-/*======Black Background Color==========*/
-.page-footer,
-.footer-first-section .quick-contact input,
-.footer-first-section .quick-contact textarea
-{
-	background: #000;
-}
-
-
-/*====White Text Color==========*/
-.top-header .container a,
-.banner .container,
-.banner .owl-nav .owl-prev, 
-.banner .owl-nav .owl-next,
-.learn-courses .learn-desining-banner,
-.course-listing-page .grid-item .learn-desining-banner-course,
-.recent-course-single .grid-item .learn-desining-banner-course,
-.whyUs-section,
-.whyUs-section .whyus-wrap a,
-.read-more-btn,
-.page-footer,
-.footer-first-section .box-wrap a,
-.footer-first-section .box-wrap ul li a,
-.footer-first-section .quick-contact input,
-.footer-first-section .quick-contact textarea,
-.page-footer .footer-second-section .social-list li a,
-.footer-last-section .container p a,
-.page-content .container aside .news-letter a,
-.page-content .courses-wrap span,
-.page-content .courses-wrap p,
-.reply a,
-.comment-form input[type="submit"],
-.button-section .button, 
-.customer-review .button,
-.people-info-wrap form input[type="submit"],
-.course-detail .course-box button,
-#course-page aside .reserve-course input[type="submit"],
-.testimonial-page aside .submit-testimonials input[type="submit"]
-{
-	color: #fff;
-}
-
-/*======White Background Color========*/
-.sub-menu,
-.nav-menu .sub-menu .sub-menu-g,
-.whyus-wrap h1::after,
-.event-wrap .details,
-.what-other-say .wrap-others-say,
-.news-detail,
-.footer-first-section .quick-contact button,
-.page-content .post-wrap .post-content,
-.page-content .follow-us,
-.page-content .latest-course,
-.testimonial-page .submit-testimonials form .custom-file-upload 
-{
-	background: #fff;
-}
-
-
-/*======Dark BLue Color For BackGround============*/
-
-.top-header,
-.course-listing-page .grid-item .learn-desining-banner-course, 
-.recent-course-single .grid-item .learn-desining-banner-course,
-.comment-form input[type="submit"],
-.button-section .button, .customer-review .button,
-.course-detail .course-box button,
-#course-page aside .reserve-course input[type="submit"],
-.testimonial-page aside .submit-testimonials input[type="submit"]
-{
-	background: #1c3961;
-}
-
-/*======Dark BLue Color For Text============*/
-
-.details h3,
-.news-detail h1,
-.query-section .container p a,
-.page-content .post-content h3,
-.course-detail .course-box i,
-.course-detail .course-box h3,
-figcaption h3
-{
-	color: #1c3961;
-}
-
-
-/*==========================================*/
-.learn-courses .box-body p, 
-.course-listing-page .grid-item .box-body p,
-.recent-course-single .grid-item .box-body p,
-.grid-box-wrap .grid-body h4,
-.grid-box-wrap .grid-body p,
-.page-content .container aside .news-letter p,
-.navigation.pagination .page-numbers,
-.contact-page-section .people-info-wrap p
-{
-	color: #5c5c5c;
-}
-
-/*===========================================*/
-.about-upper-section .who-we-are p,
-.about-upper-section .our-story a,
-.about-upper-section .our-story p
-{
-	color: #59616d;
-}
-
-/*===========================================*/
-.course-detail p,
-.course-objective li
-{
-	color: #646464;
-}
-
-/*===========================================*/
-.row .rewiew-content p,
-.learn-courses .owl-carousel .owl-nav, 
-.latest-news .owl-carousel .owl-nav
-{
-	color:  #636363;
-}
-
-/*===========================================*/
-.news-detail h2,
-.news-detail p,
-.details p
-{
-	color: #585858;
-}
-
-/*=============================================*/
-.grid-box-wrap .grid-body a,
-.navigation.pagination .page-numbers.current,
-.navigation.pagination .page-numbers:hover
-{
-	color: #2b74b8;
-}
-/*===========================================*/
-.page-content .container aside .news-letter a,
-.page-content .courses-wrap span
-{
-	background: #2b74b8; 
-}
-
-/*===============================================*/
-.about-upper-section .our-story svg,
-.team-members .developer-wrap p
-{
-	color: #1f4271;
-}
-
-
-/*==========================================*/
-
-.learn-courses .learn-desining-banner,
-.course-listing-page .grid-item .learn-desining-banner-course,
-.recent-course-single .grid-item .learn-desining-banner-course,
-.learn-desining-banner
-{
-	background: #009450;
-}
-
-/*=================================================*/
-
-.page-content .container aside .news-letter,
-#course-page aside .reserve-course,
-.testimonial-page aside .submit-testimonials,
-.query-section
-{
-	background: #f3f3f3;
-}
+*Stay curious, stay safe, and — you guessed it — **think before you click**. 🔒*
