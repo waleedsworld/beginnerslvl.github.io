@@ -4,8 +4,27 @@
 	<meta charset="UTF-8">
 	<title>LGSJT 254F-1 - SafeSurf Web by Waleed Ajmal</title>
 	<meta name="description" content="LGSJT 254F-1is a holistic tech website made by Waleed Ajmal. It includes everything from hacking forums to AI chatbots and is aimed at helping victims of hacking and providing information on how to avoid hacking.">
-	<meta property="og:title" content="LGSJT 254F-1- SafeSurf Website by Waleed Ajmal">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Waleed Ajmal">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#f1f1f1">
+	<meta name="keywords" content="SafeSurf, cybersecurity, online safety, anti-hacking, ethical hacking, internet security, hacking awareness">
+	<link rel="canonical" href="https://waleedsworld.github.io/beginnerslvl.github.io/">
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="SafeSurf">
+	<meta property="og:title" content="SafeSurf — Stay Safe Online">
+	<meta property="og:description" content="SafeSurf is a holistic cyber-safety hub: hacking-awareness forums, an AI chatbot, and practical guides to help victims of hacking and teach everyone how to stay secure online.">
+	<meta property="og:url" content="https://waleedsworld.github.io/beginnerslvl.github.io/">
+	<meta property="og:image" content="https://waleedsworld.github.io/beginnerslvl.github.io/images/page-banner.jpg">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="SafeSurf — Stay Safe Online">
+	<meta name="twitter:description" content="A holistic cyber-safety hub with hacking-awareness forums, an AI chatbot, and practical guides to stay secure online.">
+	<meta name="twitter:image" content="https://waleedsworld.github.io/beginnerslvl.github.io/images/page-banner.jpg">
+	<!-- Performance: warm up font connections -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
@@ -40,7 +59,7 @@
 			<div class="main-header">
 				<div class="container">
 					<div class="logo-wrap" itemprop="logo">
-						<img src="images/site-logo.jpg" width=100 height=10 alt="Logo Image">
+						<img loading="lazy" decoding="async" src="images/site-logo.jpg" width=100 height=10 alt="Logo Image">
 						<!-- <h1>Education</h1> -->
 					</div>
 					<div class="nav-wrap">
@@ -178,9 +197,9 @@
 				
   <div class="banner">
 	<div class="owl-four owl-carousel" itemprop="image">
-		<img src="images/page-banner.jpg" alt="Image of Bannner">
-		<img src="images/page-banner2.jpg" alt="Image of Bannner">
-		<img src="images/page-banner3.jpg" alt="Image of Bannner">
+		<img loading="lazy" decoding="async" src="images/page-banner.jpg" alt="Image of Bannner">
+		<img loading="lazy" decoding="async" src="images/page-banner2.jpg" alt="Image of Bannner">
+		<img loading="lazy" decoding="async" src="images/page-banner3.jpg" alt="Image of Bannner">
 	</div>
 	<div class="container" itemprop="description">
 		<h1>Learn To Protect Yourself Today</h1>
@@ -228,7 +247,7 @@
 			  data.slice(0, limit).forEach(function(id) {
 				$.getJSON('https://hacker-news.firebaseio.com/v0/item/' + id + '.json', function(data) {
 				  if (data.type === 'story') {
-					var item = '<li><img src="images/page-banner.jpg" alt=""><div class="info"><a href="' + data.url + '" target="_blank"><h3>' + data.title + '</h3></a><p>' + data.score + ' points by ' + data.by + ' | ' + data.descendants + ' comments</p></div></li>';
+					var item = '<li><img loading="lazy" decoding="async" src="images/page-banner.jpg" alt=""><div class="info"><a href="' + data.url + '" target="_blank" rel="noopener noreferrer"><h3>' + data.title + '</h3></a><p>' + data.score + ' points by ' + data.by + ' | ' + data.descendants + ' comments</p></div></li>';
 					items.push(item);            
 					if (items.length === limit) {
 					  $('#slider ul').append(items.join(''));
@@ -260,7 +279,7 @@
 
 						
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap" itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap" itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 								<a href="Faq/index.html" class="learn-desining-banner" itemprop="name">Turning off firewall for app installation >>></a>
 							<div class="box-body" itemprop="description">
 								<p> When installing certain applications, we may need to turn off the firewall despite its importance. How can this be done effectively without compromising the security of the system?</p>
@@ -273,7 +292,7 @@
 						</div>
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 								<a href="Faq/index.html" class="learn-desining-banner" itemprop="name"> Risks of sharing passwords >>></a>
 							<div class="box-body" itemprop="description">
 								<p>What is the appropriate action to take when a friend asks for your password, and what are the risks associated with sharing passwords?</p>
@@ -286,7 +305,7 @@
 						</div>
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 								<a href="Faq/index.html" class="learn-desining-banner" itemprop="name"> Dealing with hacker threats >>></a>
 							<div class="box-body" itemprop="description">
 								<p> If a hacker is threatening you to send them money, what steps can you take to deal with the situation, and how can you protect yourself from such attacks?</p>
@@ -300,7 +319,7 @@
 						
 
 									<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-										<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+										<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 											<a href="Faq/index.html" class="learn-desining-banner" itemprop="name"> Choosing the best security device >>></a>
 										<div class="box-body" itemprop="description">
 											<p> What are the essential steps to follow when using an antivirus program to ensure maximum protection against malware and other cyber threats?</p>
@@ -313,7 +332,7 @@
 						                      </div>
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 								<a href="Faq/index.html" class="learn-desining-banner" itemprop="name">  Authenticating Windows software >>></a>
 							<div class="box-body" itemprop="description">
 								<p> What are the reliable methods for checking whether we are using an authentic version of Windows, and how can we avoid using counterfeit software?</p>
@@ -326,7 +345,7 @@
 						</div>
 
 						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-							<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+							<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 								<a href="Faq/index.html" class="learn-desining-banner" itemprop="name"> Verifying website security >>></a>
 							<div class="box-body" itemprop="description">
 								<p>How can we determine whether an application or website is secure, and what are some reliable methods for verifying their authenticity?</p>
@@ -340,7 +359,7 @@
 																	
 
 									<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-										<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+										<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 											<a href="Faq/index.html" class="learn-desining-banner" itemprop="name">Recovering from a hacked account >>></a>
 										<div class="box-body" itemprop="description">
 											<p> If our account has been hacked, what measures should we take to recover it, and how can we prevent similar incidents from happening in the future?</p>
@@ -353,7 +372,7 @@
 									</div>
 
 									<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-										<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+										<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 											<a href="Faq/index.html" class="learn-desining-banner" itemprop="name"> Benefits of two-factor authentication >>></a>
 										<div class="box-body" itemprop="description">
 											<p> How does two-factor authentication (2FA) work, and what are its benefits in enhancing the security of online accounts and systems?</p>
@@ -367,7 +386,7 @@
 
 
 									<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-										<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+										<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 											<a href="Faq/index.html" class="learn-desining-banner" itemprop="name">  Avoiding persistent hacker threats >>></a>
 										<div class="box-body" itemprop="description">
 											<p> If a hacker is persistently calling or emailing us, threatening to steal our personal information or access our email account, what steps can we take to avoid falling victim to their schemes?											</p>
@@ -381,7 +400,7 @@
 												
 									
 												<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
-													<div class="img-wrap"  itemprop="image"><img src="images/course-pic.jpg" alt="courses picture"></div>
+													<div class="img-wrap"  itemprop="image"><img loading="lazy" decoding="async" src="images/course-pic.jpg" alt="courses picture"></div>
 														<a href="static/contact.html" class="learn-desining-banner" itemprop="name">Immediate steps after being hacked >>></a>
 													<div class="box-body" itemprop="description">
 														<p>What are the immediate steps to take if our computer system or online accounts have been hacked, and how can we minimize the damage caused by such incidents, including recovering lost data or regaining control of our social media accounts?</p>
@@ -432,7 +451,7 @@
 			<div class="container">
 				<div class="event-wrap">
 					<div class="img-wrap" itemprop="image">
-						<img src="images/events.jpg" alt="event images">
+						<img loading="lazy" decoding="async" src="images/events.jpg" alt="event images">
 					</div>
 					<div class="details">
 						<a href=""><h3 itemprop="name">Student Security Forum.</h3></a>
@@ -445,7 +464,7 @@
 
 				<div class="event-wrap">
 					<div class="img-wrap" itemprop="image">
-						<img src="images/events.jpg" alt="event images">
+						<img loading="lazy" decoding="async" src="images/events.jpg" alt="event images">
 					</div>
 					<div class="details">
 						<a href=""><h3 itemprop="name">Tech Talk for Students.</h3></a>
