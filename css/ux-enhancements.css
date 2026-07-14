@@ -1,0 +1,201 @@
+/*==================================================================
+	UX Enhancements
+	Progressive, non-destructive polish layered on top of style.css:
+	- Keyboard accessibility (skip link, visible focus rings)
+	- Reduced-motion support
+	- Responsive safeguards & larger touch targets
+	- Image loading (fade-in) states
+	- Opt-in / system dark mode with a persistent theme toggle
+	These rules are additive and scoped so they never fight the base
+	theme in light mode.
+==================================================================*/
+
+:root {
+	color-scheme: light dark;
+	--ux-focus: #005594;
+	--ux-focus-ring: 0 0 0 3px rgba(0, 85, 148, 0.45);
+}
+
+/*------------------------------------------------------------------
+	Skip to content link (visible only on keyboard focus)
+------------------------------------------------------------------*/
+.ux-skip-link {
+	position: absolute;
+	left: 12px;
+	top: -60px;
+	z-index: 10000;
+	padding: 10px 18px;
+	background: #005594;
+	color: #fff;
+	font-family: 'Raleway', Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 0 0 6px 6px;
+	text-decoration: none;
+	transition: top 0.2s ease;
+}
+.ux-skip-link:focus {
+	top: 0;
+	outline: 3px solid #fff;
+	outline-offset: 2px;
+}
+
+#ux-main:focus {
+	outline: none;
+}
+
+/*------------------------------------------------------------------
+	Visible focus for keyboard users only (mouse clicks stay clean)
+------------------------------------------------------------------*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+#bar:focus-visible,
+#close:focus-visible {
+	outline: 3px solid var(--ux-focus);
+	outline-offset: 2px;
+	box-shadow: var(--ux-focus-ring);
+	border-radius: 3px;
+}
+
+/* Fallback for browsers without :focus-visible */
+#bar:focus,
+#close:focus {
+	outline: 3px solid var(--ux-focus);
+	outline-offset: 2px;
+}
+
+/*------------------------------------------------------------------
+	Larger, comfortable touch targets on the mobile menu toggle
+------------------------------------------------------------------*/
+#bar,
+#close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	line-height: 1;
+	border-radius: 6px;
+}
+
+/*------------------------------------------------------------------
+	Responsive media safeguards (prevent horizontal overflow)
+------------------------------------------------------------------*/
+img,
+svg,
+video,
+iframe {
+	max-width: 100%;
+}
+
+/*------------------------------------------------------------------
+	Image loading / fade-in state
+------------------------------------------------------------------*/
+img.ux-fade {
+	opacity: 0;
+	transition: opacity 0.45s ease;
+}
+img.ux-fade.ux-loaded {
+	opacity: 1;
+}
+
+/*------------------------------------------------------------------
+	Theme toggle button
+------------------------------------------------------------------*/
+.ux-theme-toggle {
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	z-index: 9999;
+	width: 48px;
+	height: 48px;
+	border: none;
+	border-radius: 50%;
+	background: #005594;
+	color: #fff;
+	font-size: 20px;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+.ux-theme-toggle:hover {
+	transform: translateY(-2px);
+	background: #00436f;
+}
+.ux-theme-toggle:active {
+	transform: translateY(0);
+}
+
+/*------------------------------------------------------------------
+	Reduced motion: respect users who ask for less animation
+------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/*==================================================================
+	Dark mode
+	Implemented with a mathematically-safe colour inversion so a
+	legacy, hand-styled template can never end up black-on-black:
+	every content block is inverted (light surfaces -> dark, dark
+	text -> light) and photographic media is re-inverted so it keeps
+	its natural appearance.
+
+	The filter is applied to each direct content child of <body>
+	(not <body> itself) so that fixed/absolute UI chrome tagged
+	.ux-noinvert — the theme toggle and skip link — is excluded and
+	keeps correct positioning and its own colours.
+
+	Active when:
+	  - the user explicitly picks dark  (html[data-ux-theme="dark"])
+	  - OR the OS prefers dark AND the user has not forced light
+==================================================================*/
+html[data-ux-theme="dark"],
+html[data-ux-theme="dark"] body {
+	background: #0e1116;
+}
+
+html[data-ux-theme="dark"] body > *:not(.ux-noinvert):not(script):not(style) {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+/* Re-invert media so photos/logos render naturally in dark mode */
+html[data-ux-theme="dark"] body img,
+html[data-ux-theme="dark"] body picture,
+html[data-ux-theme="dark"] body video,
+html[data-ux-theme="dark"] body iframe {
+	filter: invert(1) hue-rotate(180deg);
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]),
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body {
+		background: #0e1116;
+	}
+
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body > *:not(.ux-noinvert):not(script):not(style) {
+		filter: invert(1) hue-rotate(180deg);
+	}
+
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body img,
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body picture,
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body video,
+	html:not([data-ux-theme="light"]):not([data-ux-theme="dark"]) body iframe {
+		filter: invert(1) hue-rotate(180deg);
+	}
+}
