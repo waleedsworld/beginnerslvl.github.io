@@ -6,6 +6,12 @@ Built by **Waleed Ajmal** as a school tech project, SafeSurf is a small multi-pa
 
 ![SafeSurf home page](docs/media/home-desktop.png)
 
+### 🎬 Take a scroll through it
+
+![SafeSurf — animated walkthrough of the home page](assets/demo.gif)
+
+*A quick pan down the landing page: the hero, the student Q&A cards, the "why cyber security matters" panel, and the forums — all in one scroll.*
+
 ---
 
 ## ✨ What's inside
@@ -80,6 +86,7 @@ That's it. You're in. Poke around the pages, the menus, and the forums.
 ├── js/                   # jQuery, sliders, lightbox, menu logic
 ├── images/               # Banners, logos, icons, security.pdf primer
 ├── webfonts/             # Icon fonts
+├── assets/               # Demo media (animated walkthrough + hero shot)
 └── docs/media/           # Screenshots used in this README
 ```
 
